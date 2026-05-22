@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+
+        <!-- hamburger-knapp – visas bara på mobil -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- navbar-innehåll – kollapsas på mobil, visas alltid på desktop -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <!-- navigationslänkar centrerade -->
+            <ul class="navbar-nav m-auto gap-lg-5">
+                <li class="nav-item">
+                    <a class="nav-link fs-5" routerLink="/books" routerLinkActive="active">
+                        <i class="fa-solid fa-book"></i> Böcker
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fs-5" routerLink="/quotes" routerLinkActive="active">
+                        <i class="fa-solid fa-quote-left"></i> Citat
+                    </a>
+                </li>
+            </ul>
+
+            <!-- dark mode toggle och logout -->
+            <div class="d-flex align-items-center gap-2">
+                <button class="btn btn-outline-secondary" (click)="toggleDarkMode()">
+                    <i class="fa-solid" [class.fa-moon]="!isDarkMode" [class.fa-sun]="isDarkMode"></i>
+                </button>
+
+                @if (isLoggedIn()) {
+                <button class="btn btn-outline-danger" (click)="logout()">
+                    <i class="fa-solid fa-right-from-bracket"></i> Logga ut
+                </button>
+                }
+            </div>
+
+        </div>
+    </div>
+</nav>

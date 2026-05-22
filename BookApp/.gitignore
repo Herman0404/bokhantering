@@ -1,0 +1,19 @@
+# Angular
+book-app/node_modules/
+book-app/dist/
+book-app/.angular/
+
+# .NET
+BookApi/bin/
+BookApi/obj/
+BookApi/appsettings.Development.json
+
+# Känslig konfiguration – lägg JWT-nyckeln i miljövariabel innan deploy
+# BookApi/appsettings.json  ← avkommentera om du lägger nyckeln i miljövariabel
+
+# VS Code
+.vscode/
+
+# Övrigt
+.DS_Store
+Thumbs.db

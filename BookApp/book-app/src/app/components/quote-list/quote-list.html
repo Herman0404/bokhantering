@@ -1,0 +1,27 @@
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2><i class="fa-solid fa-quote-left"></i> Mina citat</h2>
+        <button class="btn btn-success" (click)="addQuote()">
+            <i class="fa-solid fa-plus"></i> Lägg till citat
+        </button>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="col" *ngFor="let quote of quotes">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">{{ quote.text }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ quote.author }}</h6>
+                </div>
+                <div class="card-footer d-flex justify-content-end">
+                    <button class="btn btn-primary btn-sm" (click)="editQuote(quote.id)">
+                        <i class="fa-solid fa-pen"></i>
+                    </button>
+                    <button class="btn btn-danger btn-sm ms-2" (click)="deleteQuote(quote.id)">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

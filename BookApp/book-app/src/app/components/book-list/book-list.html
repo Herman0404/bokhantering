@@ -1,0 +1,38 @@
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2><i class="fa-solid fa-book"></i> Mina böcker</h2>
+        <button class="btn btn-success" (click)="addBook()">
+            <i class="fa-solid fa-plus"></i> Lägg till bok
+        </button>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="col" *ngFor="let book of books">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">{{ book.title }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ book.author }}</h6>
+                    @if (book.genre) {
+                    <p class="card-text text-muted small">
+                        <i class="fa-solid fa-tag"></i> {{ book.genre }}
+                    </p>
+                    }
+                    <p class="card-text">{{ book.description }}</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <small class="text-muted">
+                        <i class="fa-solid fa-calendar"></i> {{ book.publishedDate | date:'yyyy-MM-dd' }}
+                    </small>
+                    <div>
+                        <button class="btn btn-primary btn-sm" (click)="editBook(book.id)">
+                            <i class="fa-solid fa-pen"></i>
+                        </button>
+                        <button class="btn btn-danger btn-sm ms-2" (click)="deleteBook(book.id)">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
