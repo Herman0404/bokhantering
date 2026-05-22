@@ -5,7 +5,7 @@ En responsiv CRUD-webbapplikation byggd med Angular 20 och .NET 9 C# API med JWT
 ## Tekniker
 
 - **Frontend:** Angular 20, Bootstrap 5.3, Font Awesome 6
-- **Backend:** .NET 9, C# Web API
+- **Backend:** .NET 10, C# Web API
 - **Autentisering:** JWT (JSON Web Tokens)
 
 ## Funktioner
@@ -21,7 +21,7 @@ En responsiv CRUD-webbapplikation byggd med Angular 20 och .NET 9 C# API med JWT
 ### Krav
 
 - [Node.js](https://nodejs.org) (LTS)
-- [.NET 9 SDK](https://dotnet.microsoft.com/download)
+- [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0)
 - [Angular CLI](https://angular.dev/tools/cli) – `npm install -g @angular/cli`
 
 ### Backend
