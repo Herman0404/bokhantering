@@ -6,10 +6,11 @@ import { BookList } from './components/book-list/book-list';
 import { QuoteList } from './components/quote-list/quote-list';
 import { QuoteForm } from './components/quote-form/quote-form';
 import { authGuard } from './guards/auth-guard';
+import { loginGuard } from './guards/login-guard';
 
 export const routes: Routes = [
-  { path: 'register', component: Register },
-  { path: 'login', component: Login },
+  { path: 'register', component: Register, canActivate: [loginGuard] },
+  { path: 'login', component: Login, canActivate: [loginGuard] },
   {
     path: '',
     canActivate: [authGuard],
@@ -22,6 +23,6 @@ export const routes: Routes = [
       { path: 'quotes/edit/:id', component: QuoteForm },
     ],
   },
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'books', pathMatch: 'full' },
   { path: '**', redirectTo: 'login' },
 ];

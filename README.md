@@ -1,6 +1,6 @@
 # BookApp
 
-En responsiv CRUD-webbapplikation byggd med Angular 20 och .NET 9 C# API med JWT-autentisering.
+En responsiv CRUD-webbapplikation byggd med Angular 20 och .NET 10 C# API med JWT-autentisering.
 
 ## Tekniker
 
@@ -10,11 +10,11 @@ En responsiv CRUD-webbapplikation byggd med Angular 20 och .NET 9 C# API med JWT
 
 ## Funktioner
 
-- Registrera och logga in med JWT-autentisering
+- Registrering och inlogg med JWT-autentisering
 - CRUD-operationer för böcker och citat (lägg till, visa, redigera, radera)
-- Varje användare ser bara sina egna böcker och citat + 5 hårdkodade citat
-- Dark mode / light mode toggle som sparas mellan besök
-- Responsiv design för mobil, surfplatta och desktop
+- Varje användare ser bara sina egna böcker och citat + 5 förinlagda citat
+- Darkmode & Lightmode toggle som sparas i localstorage
+- Responsiv design för mobil, surfplatta och desktop, stylat med bootstrap
 
 ## Köra lokalt
 
@@ -31,7 +31,7 @@ cd BookApp/BookApi
 dotnet run
 ```
 
-Backend körs på `http://localhost:5019`
+Lokal backend körs på `http://localhost:5019`
 
 ### Frontend
 
@@ -40,13 +40,13 @@ cd BookApp/book-app
 ng serve
 ```
 
-Frontend körs på `http://localhost:4200`
+Lokal frontend körs på `http://localhost:4200`
 
 ## Projektstruktur
 
 ```
 BookApp/
-  BookApi/              .NET 9 backend
+  BookApi/              .NET 10 backend
     Controllers/        API-endpoints (Books, Quotes, Auth)
     Models/             Datamodeller (Book, Quote, User)
     Services/           JWT TokenService
@@ -55,14 +55,18 @@ BookApp/
     src/app/
       components/       Angular komponenter
       services/         API-tjänster
-      models/           Dataodeller i typescript
-      guards/           Route guards (för login/register)
+      models/           Datamodeller i TypeScript
+      guards/           Route guards (skyddar inloggade sidor)
       interceptors/     JWT-interceptor
 ```
 
 ## Live Demo
 
-- **Frontend:** [länk till Netlify] (lägger till när deployad)
-- **Backend:** [länk till Render] (lägger till när deployad)
+- **Frontend:** https://bokhantering.vercel.app vercel free
+- **Backend:** https://bookapi-hg1e.onrender.com render free
 
-> **OBS:** Backend körs på Renders gratisplan och kan ta 30-60 sekunder att starta efter inaktivitet.
+> **OBS:** Backend körs på Renders gratisplan och stängs ner efter 15 minuters inaktivitet.
+
+> All data (användare, böcker, citat) återställs vid omstart eftersom ingen databas används.
+
+> Första anropet efter inaktivitet kan ta 30-60 sekunder.
