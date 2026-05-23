@@ -1,4 +1,5 @@
 {
+    "outputDirectory": "dist/book-app/browser",
     "rewrites": [
         {
             "source": "/(.*)",
